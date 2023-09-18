@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, mapToCanActivate, mapToResolve } from '@angular/router';
 import { ChatLoginPageComponent } from './auth/chat-login-page/chat-login-page.component';
+import { RoleGuard } from './role.guard';
 
 const routes: Routes = [
   {
@@ -8,9 +9,14 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: '',
+    path: 'chat',
     loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule),
-    canActivate: [RoleGuard],
+    canActivate: mapToCanActivate([RoleGuard]),
+  },
+  {
+    path: '',
+    pathMatch: "full",
+    redirectTo: 'chat'
   },
 ];
 

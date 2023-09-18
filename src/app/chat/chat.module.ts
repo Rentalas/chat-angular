@@ -5,6 +5,7 @@ import { ChatRoutingModule } from './chat-routing.module';
 import { ChatComponent } from './chat.component';
 import { ChatInputComponent } from './chat-input/chat-input.component';
 import { ChatUserListComponent } from './chat-user-list/chat-user-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ChatUserListComponent } from './chat-user-list/chat-user-list.component
   ],
   imports: [
     CommonModule,
-    ChatRoutingModule
+    ChatRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class ChatModule { }

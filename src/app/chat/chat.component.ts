@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Message, User } from '../models/models';
 
 @Component({
   selector: 'app-chat',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent {
+  messages: Message[];
+  users: User[];
 
+  private getMessages() {
+
+  }
+
+  private getUsers() {
+
+  }
 }

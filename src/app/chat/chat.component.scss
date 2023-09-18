@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.chat-column {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+}
+
+.user-list-column {
+    display: flex;
+}
+
+.chat-input {
+    position: absolute;
+    width: 70vw;
+    height: 25vh;
+    bottom: 10px;
+}
+
+.chat-output {
+    width: 70vw;
+    height: 70vh;
+    border: solid 1px black;
+}

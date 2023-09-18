@@ -1,0 +1,3 @@
+<input [formControl]="name" placeholder="User Name">
+<button type="submit" (click)="logIn()">Login</button>
+<div *ngIf="hasError">{{errorMessage}}</div>

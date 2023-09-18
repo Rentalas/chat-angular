@@ -1,13 +1,24 @@
 import { Injectable } from '@angular/core';
+import { Observable, tap } from 'rxjs';
+import { DaoService } from 'src/app/services/dao.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  private userToken: any;
+  private isValid: boolean = false;
 
-  getUserToken() {
-    
+  constructor(private daoService: DaoService) { }
+
+  authorize(name: string): Observable<boolean> {
+    return this.daoService.validateName(name).pipe(
+      tap(isValid => this.isValid = isValid),
+    );
+  }
+
+  isAuthorized(): boolean {
+    return this.isValid;
   }
 }
